@@ -9,6 +9,11 @@
     border-left-width: 0px !important;
   }
 
+  @media (min-width: 768px) {
+    .g-sidenav-pinned #midcol,.g-sidenav-pinned #lastcol {
+      opacity: 1!important;
+    }
+  }
   .g-sidenav-pinned #midcol,
   .g-sidenav-pinned #lastcol {
     opacity: 0;

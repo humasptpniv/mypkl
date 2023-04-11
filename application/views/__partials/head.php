@@ -31,4 +31,6 @@
   <link id="pagestyle" href="<?= base_url() ?>vendor/assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
   <link rel="stylesheet" href="<?= base_url() ?>vendor/assets/css/notyf.min.css">
   <script type="text/javascript" src="<?= base_url() ?>vendor/assets/js/plugins/notyf.min.js"></script>
+  
+<script src="<?= base_url() ?>vendor/assets/js/plugins/smooth-scrollbar.min.js"></script>
 </head>

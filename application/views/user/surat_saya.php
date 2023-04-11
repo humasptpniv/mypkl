@@ -1,8 +1,8 @@
 <?php extract($this->session->userdata('userdata')); ?>
 <main class="main-content" id="main_content">
     <!-- Surat Saya -->
-    <div class="ps-1 pe-2 px-md-0 px-md-4 d-flex justify-content-center ">
-        <div  style="height:calc(100vh - 6rem);box-shadow:0 2px 12px 0 rgba(0, 0, 0, 0.16);width:100%" class="card card-plain mt-3 rounded-3 mb-4 pt-0 bg-white overflow-hidden">
+    <div data-aos="fade-down" data-aos-duration="1000" class="ps-1 pe-2 px-md-0 px-md-4 d-flex justify-content-center ">
+        <div style="height:calc(100vh - 6.5rem);box-shadow:0 2px 12px 0 rgba(0, 0, 0, 0.16);width:100%" class="card card-plain mt-3 rounded-3 mb-4 pt-0 bg-white overflow-hidden">
             <div class="d-flex flex-row rounded-bottom navbar mt-0 mb-2 justify-content-start">
                 <div class="justify-content-start ms-2">
                     <div class="d-none d-md-flex flex-row w-100 mt-2">
@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card-body mt-1 table-responsive px-0">
+            <div id="tbl-wrapper" class="card-body mt-1 table-responsive px-0">
                 <div class="mt-1">
                     <div class="table-responsive">
                         <table class="table align-items-center justify-content-center mb-0">
@@ -179,7 +179,4 @@
         </div>
     </div>
     <!-- End Surat Saya -->
-<script>
-    $('body').css('overflow-y','hidden');
-</script>
 </main>

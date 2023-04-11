@@ -14,47 +14,76 @@
                             <div class="col-sm-11 col-md-6 col-lg-6">
                                 <label class="fs-6">Nama Lengkap</label>
                                 <div class="mb-3">
-                                    <input type="text" class="form-control" placeholder="Nama" aria-label="Name" aria-describedby="email-addon">
+                                    <input type="text" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-11 col-md-6 col-lg-6">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <label class="fs-6">Tempat lahir</label>
+                                        <div class="mb-3">
+                                            <input type="text" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <label class="fs-6">Tanggal Lahir</label>
+                                        <div class="mb-3">
+                                            <input type="date" class="form-control" required>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-sm-11 col-md-6 col-lg-6">
                                 <label class="fs-6">Nomor Induk Kependudukan (NIK)</label>
                                 <div class="mb-3">
-                                    <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                                    <input type="number" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-sm-11 col-md-6 col-lg-6">
                                 <label class="fs-6">Nomor Induk Mahasiswa (NIM)</label>
                                 <div class="mb-3">
-                                    <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                                    <input type="number" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-sm-11 col-md-6 col-lg-6">
-                                <label class="fs-6">Nomor Handphone (HP)</label>
+                                <label class="fs-6">Alamat</label>
                                 <div class="mb-3">
-                                    <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                                    <input type="text" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-sm-11 col-md-6 col-lg-6">
                                 <label class="fs-6">Asal Perguruan Tinggi</label>
                                 <div class="mb-3">
-                                    <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                                    <input type="text" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-sm-11 col-md-6 col-lg-6">
                                 <div class="mb-3">
-                                    <label class="fs-6">Kata Sandi</label>
-                                    <input type="text" class="form-control" placeholder="Kata Sandi" aria-label="Password" aria-describedby="password-addon">
+                                    <label class="fs-6">Jurusan</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-11 col-md-6 col-lg-6">
+                                <div class="mb-3">
+                                    <label class="fs-6">Pasfoto</label>
+                                    <input type="file" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-11 col-md-6 col-lg-6">
+                                <div class="mb-3">
+                                    <label class="fs-6">Foto KTP</label>
+                                    <input type="file" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-11 col-md-6 col-lg-6">
+                                <div class="mb-3">
+                                    <label class="fs-6">Foto KTM</label>
+                                    <input type="file" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-12 mt-2">
-                                <div class="row">
-                                    <div class="col-6 justify-content-center justify-content-md-start">
-                                        <div class="bg-main"><img height="200px" src="<?= base_url() ?>media/img/logo/kominfo-logo.png" alt=""></div>
-                                    </div>
-                                    <div class="col-6 justify-content-center justify-content-md-start">
-                                        <button type="submit" class="btn btn-ouline-main text-bold px-3 mb-2 float-start btn-outline-dark text-dark">Kirim</button>
-                                    </div>
+                                <div class="col-6 justify-content-center justify-content-md-start">
+                                    <button type="submit" class="btn btn-outline-main fw-bold px-3 mb-2 float-start">Kirim</button>
                                 </div>
                             </div>
                         </div>
