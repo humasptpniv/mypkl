@@ -45,7 +45,7 @@
                                     </td>
                                     <td>:</td>
                                     <td>
-                                        <p class="text-sm font-weight-bold mb-0">LOREM IPSUM DOLOR SIT AMET CONSTECTEUR</p>
+                                        <p class="text-sm font-weight-bold mb-0"><?=$nama?></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -58,7 +58,7 @@
                                     </td>
                                     <td>:</td>
                                     <td>
-                                        <p class="text-sm font-weight-bold mb-0">LOREM IPSUM DOLOR SIT AMET CONSTECTEUR</p>
+                                        <p class="text-sm font-weight-bold mb-0"><?=$ttl?></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -71,7 +71,7 @@
                                     </td>
                                     <td>:</td>
                                     <td>
-                                        <p class="text-sm font-weight-bold mb-0">LOREM IPSUM DOLOR SIT AMET CONSTECTEUR</p>
+                                        <p class="text-sm font-weight-bold mb-0"><?=$nik?></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -84,7 +84,7 @@
                                     </td>
                                     <td>:</td>
                                     <td>
-                                        <p class="text-sm font-weight-bold mb-0">LOREM IPSUM DOLOR SIT AMET CONSTECTEUR</p>
+                                        <p class="text-sm font-weight-bold mb-0"><?=$nim_nisn?></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -97,7 +97,7 @@
                                     </td>
                                     <td>:</td>
                                     <td>
-                                        <p class="text-sm font-weight-bold mb-0">LOREM IPSUM DOLOR SIT AMET CONSTECTEUR</p>
+                                        <p class="text-sm font-weight-bold mb-0"><?=$alamat?></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -110,7 +110,7 @@
                                     </td>
                                     <td>:</td>
                                     <td>
-                                        <p class="text-sm font-weight-bold mb-0">LOREM IPSUM DOLOR SIT AMET CONSTECTEUR</p>
+                                        <p class="text-sm font-weight-bold mb-0"><?=$apt?></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -123,7 +123,7 @@
                                     </td>
                                     <td>:</td>
                                     <td>
-                                        <p class="text-sm font-weight-bold mb-0">LOREM IPSUM DOLOR SIT AMET CONSTECTEUR</p>
+                                        <p class="text-sm font-weight-bold mb-0"><?=$jur?></p>
                                     </td>
                                 </tr>
                                 <tr>
