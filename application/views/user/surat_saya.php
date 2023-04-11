@@ -12,9 +12,9 @@
                             </a>
                         </div>
                         <div class="ms-4">
-                            <h4 class="fw-bold"><?= 'Agus Hapsari' ?></h4>
-                            <h6 class="fw-bold"><?= 'Politeknik Negeri Medan' ?></h6>
-                            <h6 class="fw-bold"><?= 'Teknik Komputer' ?></h6>
+                            <h4 class="fw-bold"><?= $nama_lengkap ?></h4>
+                            <h6 class="fw-bold"><?= $apt ?></h6>
+                            <h6 class="fw-bold"><?= $jur ?></h6>
                         </div>
                     </div>
                     <div class="d-block d-md-none">
@@ -23,9 +23,9 @@
                                 <img class="mb-1 ms-6 ps-1 rounded" width="90vw" height="90vw" style="object-fit:cover" src="<?= base_url() ?>vendor/assets/img/ivancik.jpg" alt="">
                             </a>
                         </div>
-                        <h5 class="fw-bold"><?= 'Agus Hapsari Andalas' ?></h5>
-                        <p class="fw-bold text-sm"><?= 'Politeknik Negeri Medan' ?></p>
-                        <p class="fw-bold text-sm"><?= 'Teknik Komputer Dan Jaringan' ?></p>
+                        <h5 class="fw-bold"><?= $nama_lengkap ?></h5>
+                        <p class="fw-bold text-sm"><?= $apt ?></p>
+                        <p class="fw-bold text-sm"><?= $jur ?></p>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                                     </td>
                                     <td>:</td>
                                     <td>
-                                        <p class="text-sm font-weight-bold mb-0"><?=$nama?></p>
+                                        <p class="text-sm font-weight-bold mb-0"><?= $nama_lengkap ?></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -58,7 +58,7 @@
                                     </td>
                                     <td>:</td>
                                     <td>
-                                        <p class="text-sm font-weight-bold mb-0"><?=$ttl?></p>
+                                        <p class="text-sm font-weight-bold mb-0"><?= $tl ?>, <?= $tgl ?></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -71,7 +71,7 @@
                                     </td>
                                     <td>:</td>
                                     <td>
-                                        <p class="text-sm font-weight-bold mb-0"><?=$nik?></p>
+                                        <p class="text-sm font-weight-bold mb-0"><?= $nik ?></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -84,7 +84,7 @@
                                     </td>
                                     <td>:</td>
                                     <td>
-                                        <p class="text-sm font-weight-bold mb-0"><?=$nim_nisn?></p>
+                                        <p class="text-sm font-weight-bold mb-0"><?= $nim_nisn ?></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -97,7 +97,7 @@
                                     </td>
                                     <td>:</td>
                                     <td>
-                                        <p class="text-sm font-weight-bold mb-0"><?=$alamat?></p>
+                                        <p class="text-sm font-weight-bold mb-0"><?= $alamat ?></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -110,7 +110,7 @@
                                     </td>
                                     <td>:</td>
                                     <td>
-                                        <p class="text-sm font-weight-bold mb-0"><?=$apt?></p>
+                                        <p class="text-sm font-weight-bold mb-0"><?= $apt ?></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -123,7 +123,7 @@
                                     </td>
                                     <td>:</td>
                                     <td>
-                                        <p class="text-sm font-weight-bold mb-0"><?=$jur?></p>
+                                        <p class="text-sm font-weight-bold mb-0"><?= $jur ?></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -137,7 +137,9 @@
                                     <td>:</td>
                                     <td>
                                         <div>
-                                            <img src="<?= base_url() ?>vendor/assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm rounded-circle me-2" alt="spotify">
+                                            <a data-gallery='portfolioGallery' href="<?= base_url() ?>vendor/assets/img/ivancik.jpg" class="glightbox portfolio-lightbox preview-link">
+                                                <img src="<?= base_url() ?>vendor/assets/img/ivancik.jpg" class="avatar avatar-sm rounded-circle me-2" alt="spotify">
+                                            </a>
                                         </div>
                                     </td>
                                 </tr>
@@ -152,7 +154,9 @@
                                     <td>:</td>
                                     <td>
                                         <div>
-                                            <img src="<?= base_url() ?>vendor/assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm rounded-circle me-2" alt="spotify">
+                                            <a data-gallery='portfolioGallery' href="<?= base_url() ?>media/upload/dokumen/<?= $this->session->userdata('userdata')['id_user'] ?>/fktp/fktp.png" class="glightbox portfolio-lightbox preview-link">
+                                                <img src="<?= base_url() ?>media/upload/dokumen/<?= $this->session->userdata('userdata')['id_user'] ?>/fktp/fktp.png" class="avatar avatar-sm rounded-circle me-2" alt="spotify">
+                                            </a>
                                         </div>
                                     </td>
                                 </tr>

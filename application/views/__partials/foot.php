@@ -17,6 +17,7 @@
         console.log(error)
     }
     <?php echo $this->session->userdata('info-message');
+    echo $this->session->flashdata('message');
     $this->session->unset_userdata('info-message');
     ?>
 </script>

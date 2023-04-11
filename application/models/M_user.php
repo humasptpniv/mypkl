@@ -7,19 +7,15 @@ class M_user extends CI_Model
     {
         $formdata = $this->input->post();
         if (!empty($formdata['fpsp']) && !empty($formdata['fpsp']) && !empty($formdata['fpsp'])) {
-            $formdata['ttl'] = $formdata['tl'] . ", " . $formdata['tgl'];
             $id_user = $this->session->userdata('userdata')['id_user'];
-
-            unset($formdata['tl']);
-            unset($formdata['tgl']);
             unset($formdata['fpsp']);
             unset($formdata['fktp']);
             unset($formdata['fktm']);
-            var_dump($formdata);
             $this->db->where('id_dokumen', $id_user)->update('dokumen', $formdata);
-            echo $this->db->last_query();
+            $this->session->set_flashdata('message',"notyf.success('Data Berhasil Disimpan')");
+            return true;
         } else {
-            var_dump($formdata);
+            return false;
         }
     }
     public function m_surat_saya()
@@ -29,5 +25,11 @@ class M_user extends CI_Model
         if(!empty($formdata)){
             return $formdata[0];
         }
+    }
+
+    public function monthname($tgl)
+    {
+        $this->db->query("SET lc_time_names = 'id_ID';");
+        return $this->db->query("SELECT (DATE_FORMAT('$tgl','%d %M %Y')) as tgl;")->result_array()[0]['tgl']; 
     }
 }

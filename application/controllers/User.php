@@ -58,22 +58,25 @@ class User extends CI_Controller
 	{
 		$data = array('page_title' => 'Form Pengajuan PKL', 'm2' => 'active');
 		$this->load->view('__partials/head.php', $data + $this->session->userdata('usersetting') + $this->session->userdata('userdata'));
+		$formdata=$this->m_user->m_surat_saya();
 		$this->load->view('__partials/sidebar.php');
-		$this->load->view('user/form_pengajuan.php');
+		$this->load->view('user/form_pengajuan.php',$formdata);
 		$this->load->view('__partials/foot.php');
 	}
 	public function pengajuan_saya()
 	{
 		$data = array('page_title' => 'Surat Pengajuan PKL Saya', 'm3' => 'active');
 		$formdata=$this->m_user->m_surat_saya();
-		var_dump($formdata);
+		$formdata['tgl']=$this->m_user->monthname($formdata['tgl']);
 		$this->load->view('__partials/head.php', $data);
 		$this->load->view('__partials/sidebar.php', $this->session->userdata('usersetting'));
-		$this->load->view('user/surat_saya.php');
+		$this->load->view('user/surat_saya.php',$formdata);
 		$this->load->view('__partials/foot.php');
 	}
 	public function ajukan_surat()
 	{
-		$this->m_user->m_ajukan_surat();
+		if($this->m_user->m_ajukan_surat()){
+			redirect('user/pengajuan_saya');
+		}
 	}
 }
