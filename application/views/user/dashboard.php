@@ -5,7 +5,7 @@
 }
 
 </style>  
-  
+
   <script src="<?= base_url() ?>vendor/assets/js/plugins/purecounter_vanilla.js"></script>
  <main id="main_content" style="transition: all ease-in-out 200ms;" class="main-content position-relative d-block h-100 border-radius-lg pb-1">
     <div class="container-fluid mb-5">
@@ -114,7 +114,7 @@
             </div>
           </div>
         </div>
-        <div data-aos="zoom-in-up" data-aos-delay = '500' data-aos-duration="1000" class="col-lg-4 mb-lg-0 col-md-4 col-10 col-xl-4 mb-4 mt-xl-4 mt-lg-4 mt-md-3 mt-sm-2">
+        <div data-aos="zoom-in-up" data-aos-delay = '500' data-aos-duration="1000" class="col-lg-4 mb-lg-0 col-md-4 col-10 col-xl-4 mb-4 mt-xl-4 mt-lg-4 mt-md-3 mt-sm-2 transf ">
           <div  class="card">
             <div class="card-body p-3">
               <div class="row">

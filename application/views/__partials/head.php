@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php extract($this->session->userdata('usersetting')); ?>
-<html style="--main-theme-color:var(--bs-<?= $color ?>);--main-grad:var(--gradient-<? $color ?>)" lang="en">
+<html style="--main-theme-color:var(--bs-<?= $color ?>);--main-grad:var(--gradient-<?= $color ?>)" lang="en">
 
 <head>
   <meta charset="utf-8" />
@@ -29,4 +29,6 @@
   <link rel="stylesheet" href="<?= base_url() ?>vendor/assets/css/animate.css" />
   <link rel="stylesheet" href="<?= base_url() ?>vendor/assets/css/glightbox.min.css" />
   <link id="pagestyle" href="<?= base_url() ?>vendor/assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+  <link rel="stylesheet" href="<?= base_url() ?>vendor/assets/css/notyf.min.css">
+  <script type="text/javascript" src="<?= base_url() ?>vendor/assets/js/plugins/notyf.min.js"></script>
 </head>

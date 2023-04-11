@@ -4,8 +4,21 @@
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.16) !important;
   }
 
-  .sidenav.bg-transparent {
-    border: solid 1px rgba(0, 0, 0, 0.10) !important;
+  .g-sidenav-show:not(.g-sidenav-pinned) .sidenav.bg-transparent {
+    border-right-width: 0px !important;
+    border-left-width: 0px !important;
+  }
+
+  .g-sidenav-pinned #midcol,
+  .g-sidenav-pinned #lastcol {
+    opacity: 0;
+    transition: opacity ease-in 100ms;
+  }
+
+  .g-sidenav-show:not(.g-sidenav-pinned) #midcol,
+  .g-sidenav-show:not(.g-sidenav-pinned) #lastcol {
+    transition: opacity ease-in 800ms;
+    opacity: 1;
   }
 
   .main-text-color {
@@ -49,7 +62,7 @@
     AOS.init();
   </script>
 
-  <aside style="transition: all ease-in-out 300ms;overflow:hidden;border-width:1px!important;" class="sidenav order-0 navbar navbar-vertical <?= $sidebar_type ?> navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 position-fixed animate__animated animate__fadeInLeft" id="sidenav-main">
+  <aside style="transition: width linear 300ms!important;overflow:hidden;" class="sidenav order-0 navbar navbar-vertical <?= $sidebar_type ?> navbar-expand-xs  border-radius-xl my-3 fixed-start ms-3 position-fixed animate__animated animate__fadeInLeft" id="sidenav-main">
     <div class="sidenav-header bg-white overflow-hidden">
       <div class="row h-100 align-items-center">
         <div class="col-4 d-flex align-items-center">
@@ -75,7 +88,7 @@
             <div class="icon icon-shape icon-sm pb-2 lg-3 pb-xl-3 shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="bi bi-speedometer fs-6 "></i>
             </div>
-            <span class="nav-link-text ms-1">Dashboard</span>
+            <span class="nav-link-text ms-1">Dashboard </span>
           </a>
         </li>
         <?php
@@ -143,19 +156,14 @@
     </div>
   </aside>
 
-  <div class=" navbar position-fixed d-none">
-    <div style="width: 2rem;height:2rem;top:10px;left:10px;display:none;box-shadow:0 2px 12px 0 rgba(0, 0, 0, 0.16);background:white;" id="iconNavbarSidenav" class="fixed-plugin-buttons text-dark position-sticky rounded-circle d-flex justify-content-center align-items-center cursor-pointer me-3">
-    </div>
-  </div>
-  </div>
   <!-- Navbar -->
   <div style="z-index: 999;" class="nav-wrapper container-fluid w-100 p-4 pe-1 pe-md-3 pt-3 ps-1 pe-2  ps-md-4 pe-lg-4 ms-lg-0">
-    <nav class="navbar rounded-3 position-relative row main-content me-0 me-md-2 me-lg-0 bg-white animate__animated animate__fadeInDown">
+    <nav style="transition: all ease-in 300ms!important;" class="navbar rounded-3 position-relative row main-content me-0 me-md-2 me-lg-0 bg-white animate__animated animate__fadeInDown">
       <div class="col-3">
         <div class="row justify-content-start flex-row">
           <div class="col-3">
             <!-- Button Collapse/Expand Sidebar -->
-            <div style="width: 2rem;height:2rem;z-index:999;box-shadow:0 2px 12px 0 rgba(0, 0, 0, 0.16);background:white;" onclick='$("#iconNavbarSidenav").click()' class="text-dark rounded-circle d-flex justify-content-center align-items-center cursor-pointer me-3">
+            <div id="iconNavbarSidenav" style="width: 2rem;height:2rem;z-index:999;box-shadow:0 2px 12px 0 rgba(0, 0, 0, 0.16);background:white;" class="text-dark rounded-circle d-flex justify-content-center align-items-center cursor-pointer me-3">
               <div class="sidenav-toggler-inner">
                 <i class="sidenav-toggler-line"></i>
                 <i class="sidenav-toggler-line"></i>
@@ -200,7 +208,7 @@
     </nav>
   </div>
 
-  <ul class="dropdown-menu animate__animated animate__fadeInDown dropdown-menu-end px-2 py-3 me-sm-n4 border-1 border-<?= $color ?>" aria-labelledby="dropdownMenuButton">
+  <ul class="dropdown-menu animate__animated animate__fadeInDown dropdown-menu-end px-2 py-3  border-1 border-<?= $color ?>" aria-labelledby="dropdownMenuButton">
     <li class="d-flex flex-row justify-content-between pe-2 ps-2 mb-2 ">
       <span>Notifikasi</span>
       <span class="flex-row d-flex d-md-none">

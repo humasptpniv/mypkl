@@ -17,13 +17,14 @@
     <link id="pagestyle" href="<?= base_url() ?>vendor/assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
     <!-- Bootstrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="<?= base_url() ?>vendor/assets/css/notyf.min.css">
+    <script type="text/javascript" src="<?= base_url() ?>vendor/assets/js/plugins/notyf.min.js"></script>
 </head>
 <style>
     .card.card-plain {
         backdrop-filter: blur(5px);
         background-color: #ffffffe3;
     }
-
 
 
     @media all and (min-width: 1024px) and (max-width: 1280px) {}
@@ -93,30 +94,31 @@
                 <div class="container-fluid">
                     <div style="height: 100vh;" id="row_parent" class="row">
                         <!-- Login -->
-                        <div id="login" style="position: relative;z-index:2" class="col-xl-4 me-xl-1 col-lg-4 col-md-8 d-flex flex-column animate__animated animate__fadeInLeft  mx-auto">
-                            <div class="card card-plain mt-3 rounded mb-4">
+                        <div id="login" style="position: relative;z-index:2" class="col-xl-4 me-xl-1 col-lg-4 col-md-8 d-flex flex-column animate__animated animate__fadeInLeft  mx-auto pt-lg-4 pe-lg-5 <?php if ($this->input->get('s') == '') {
+                                                                                                                                                                                                        echo 'd-block';
+                                                                                                                                                                                                    } else {
+                                                                                                                                                                                                        echo 'd-none';
+                                                                                                                                                                                                    } ?>">
+                            <div style="box-shadow:0 2px 12px 0 rgba(0, 0, 0, 0.16);" class="card card-plain mt-3 rounded mb-4 border-end-md border-start-md border-top-md border-bottom-md rounded ps-lg-n5 ">
                                 <div class="card-header pb-0 text-left bg-transparent mb-0">
-                                    <div class="d-none col-12 d-flex justify-content-center mt-2 mb-2 rounded overflow-hidden">
-                                        <img class="rounded mb-1" style="object-fit: cover;width:100%;height:5em" src="<?= base_url() ?>vendor/assets/img/logos/mypkl_logo.png" alt="">
+                                    <div class=" col-12 d-flex justify-content-center mt-2 mb-2 rounded overflow-hidden">
+                                        <img class="rounded mb-1" style="object-fit: cover;width:auto;height:5em" src="<?= base_url() ?>media/img/logo/kominfo-logo.png" alt="">
                                     </div>
-                                    <h3 class="font-weight-bolder text-info text-gradient mb-2">Selamat Datang Kembali</h3>
-                                    <p class="mb-0">Silakan Masukkan Nama Pengguna (Username) dan Kata Sandi Anda</p>
+                                    <h3 class="font-weight-bolder text-info text-gradient mb-2 text-center">Selamat Datang Kembali</h3>
+                                    <p class="mb-0 text-sm text-center">Silakan Login Terlebih Dahulu</p>
                                 </div>
                                 <div class="card-body mt-1">
-                                    <form method="post" action="<?=base_url('index.php/')?>login/check_login" role="form">
-                                        <label class="mt-1">Nama Pengguna</label>
+                                    <form method="post" action="<?= base_url('index.php/') ?>login/check_login" role="form">
+                                        <label class="mt-1">Alamat Email</label>
                                         <div class="mb-3">
-                                            <input autocomplete="username" type="text" class="form-control" 
-                                            name="username" placeholder="Nama Pengguna..." aria-label="Username" aria-describedby="username" required>
-                                            <label for="username"><small class="text-danger">Email tidak terdaftar</small></label>
+                                            <input value="<?=$this->session->flashdata('username')?>" autocomplete="email" type="email" class="form-control bg-white" name="username" placeholder="Alamat Email..." aria-label="Username" aria-describedby="username" required>
                                         </div>
                                         <label>Kata Sandi</label>
                                         <div class="mb-3">
-                                            <input id="password" type="password" class="form-control" placeholder="Kata Sandi..." aria-label="Password" aria-describedby="password-addon" required>
+                                            <input required name="password" id="password" type="password" class="form-control bg-white" placeholder="Kata Sandi..." aria-label="Password" aria-describedby="password-addon" required>
                                             <i onclick="$('#password').get(0).type==('text')?$('#password').get(0).type=('password'):$('#password').get(0).type=('text');$(this).toggleClass('text-primary')" style="transform: translate(-15px,-39px);cursor:pointer" class="bi bi-eye-fill float-end fs-5"></i>
-                                            <label for="password-addon"><small class="text-danger">Password salah</small></label>
                                         </div>
-                                        <div class="form-check form-switch">
+                                        <div class="form-check form-switch d-none">
                                             <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
                                             <label class="form-check-label" for="rememberMe">Ingat Email</label>
 
@@ -137,42 +139,45 @@
                         <!-- End Login -->
 
                         <!-- Register -->
-                        <div id="register" style="position: relative;z-index:2" class="col-xl-4 me-xl-1 col-lg-4 col-md-8 d-flex flex-column mx-auto d-none animate__animated animate__fadeInLeft">
-                            <div class="card card-plain mt-3 rounded mb-4">
+                        <div  id="register" style="position: relative;z-index:2" class="col-xl-4 me-xl-1 col-lg-4 col-md-8 pe-lg-5 d-flex flex-column mx-auto pt-lg-2 <?php if ($this->input->get('s') == 'reg') {
+                                                                                                                                                            echo 'd-block';
+                                                                                                                                                        } else {
+                                                                                                                                                            echo 'd-none';
+                                                                                                                                                        } ?> animate__animated animate__fadeInLeft">
+                            <div style="box-shadow:0 2px 12px 0 rgba(0, 0, 0, 0.16);"  class="card card-plain mt-3 rounded mb-4">
                                 <div class="card-header pb-0 text-left bg-transparent mb-0">
-                                    <div class="d-none col-12 d-flex justify-content-center mt-2 mb-2 rounded overflow-hidden">
-                                        <img class="rounded mb-1" style="object-fit: cover;width:100%;height:5em" src="<?= base_url() ?>vendor/assets/img/logos/mypkl_logo.png" alt="">
+                                <div class=" col-12 d-flex justify-content-center mt-2 mb-2 rounded overflow-hidden">
+                                        <img class="rounded mb-1" style="object-fit: cover;width:auto;height:5em" src="<?= base_url() ?>media/img/logo/kominfo-logo.png" alt="">
                                     </div>
-                                    <h3 class="font-weight-bolder text-info text-gradient mb-2">Daftarkan Akun Anda</h3>
-                                    <p class="mb-0">Silakan Isi Data Berikut Dengan Benar</p>
+                                    <h3 class="font-weight-bolder text-info text-gradient mb-2 text-center">Daftar Akun</h3>
+                                    <p class="mb-0 text-sm text-center">Silakan Isi Data Berikut Dengan Benar</p>
                                 </div>
                                 <div class="card-body mt-1">
-                                    <form role="form">
+                                    <form role="form" action="<?= base_url('index.php/') ?>/login/register" method="post">
                                         <label>Nama</label>
                                         <div class="mb-3">
-                                            <input type="text" class="form-control" placeholder="Nama" aria-label="Name" aria-describedby="email-addon">
+                                            <input required value="<?=$this->session->flashdata('nama')?>" name="nama" type="text" class="form-control" placeholder="Nama" aria-label="Name" aria-describedby="email-addon">
                                         </div>
                                         <label>Alamat Email</label>
                                         <div class="mb-3">
-                                            <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon">
+                                            <input required name="username" type="email" class="form-control" placeholder="Alamat Email..." aria-label="Email" aria-describedby="email-addon">
                                         </div>
                                         <div class="mb-3">
                                             <label>Kata Sandi</label>
-                                            <input type="text" class="form-control" placeholder="Kata Sandi" aria-label="Password" aria-describedby="password-addon">
+                                            <input required name="password" type="password" class="form-control" placeholder="Kata Sandi" aria-label="Password" aria-describedby="password-addon">
                                         </div>
                                         <div class="form-check form-check-gradient text-left">
                                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                                            <label class="form-check-label" for="flexCheckDefault">
+                                            <label class="form-check-label" for="flexCheckDefault" aria-required="true" required>
                                                 Saya setuju dengan <a href="javascript:;" class="text-info font-weight-bolder">Syarat dan Ketentuan</a>
                                             </label>
                                         </div>
                                         <div class="text-center">
-                                            <button type="button" class="btn bg-gradient-info w-100 my-4 mb-2">Daftarkan Akun</button>
+                                            <button type="submit" class="btn bg-gradient-info w-100 my-4 mb-2">Daftarkan Akun</button>
                                         </div>
                                         <p class="text-sm mt-3 mb-0">Sudah punya akun? <a onclick="$('#register').addClass('d-none');$('#login').removeClass('d-none')" class="text-info cursor-pointer font-weight-bolder">Masuk</a></p>
                                     </form>
                                 </div>
-
                             </div>
                         </div>
                         <!-- End Register -->
@@ -197,7 +202,34 @@
     <script src="<?= base_url() ?>vendor/assets/js/plugins/jquery.min.js"></script>
     <script src="<?= base_url() ?>vendor/assets/js/core/popper.min.js"></script>
     <script src="<?= base_url() ?>vendor/assets/js/core/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript">
+        let notyf = new Notyf({
+            duration: 1500,
+            position: {
+                x: 'center',
+                y: 'top',
+            },
+            types: [{
+                    type: 'warning',
+                    background: 'orange',
+                    icon: {
+                        className: 'material-icons',
+                        tagName: 'i',
+                        text: 'warning'
+                    }
+                },
+                {
+                    type: 'error',
+                    duration: 3000,
+                    dismissible: true
+                }
+            ]
+
+        });
+        <?= $this->session->flashdata('message'); ?>
+    </script>
 </body>
-<script>
-</script>
+
 </html>
