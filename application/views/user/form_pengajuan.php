@@ -26,6 +26,7 @@
                                         </div>
                                     </div>
                                     <div class="col-4">
+                                        <label class="fs-6 d-block d-md-none">Tanggal Lahir</label>
                                         <label class="fs-6">Tanggal Lahir</label>
                                         <div class="mb-3">
                                             <input type="date" class="form-control" required>
